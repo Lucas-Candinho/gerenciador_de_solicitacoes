@@ -126,6 +126,6 @@ $result = $conn->query($sql);
         <button type="submit">Filtrar</button>
     </form>
     <br />
-    <a href="../logout.php">Sair</a>
+    <a href="../index.php">Sair</a>
 </body>
 </html>

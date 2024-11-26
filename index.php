@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             VALUES ('$nome', '$ultimo_nome', '$email', '$telefone', '$cpf', $senha)";
 
     if ($conn->query($sql) === TRUE) {
-        header("Location: login.php"); 
+        header("Location: ./cliente/cliente.php"); 
         exit;
     } else {
         $erro = "Erro ao cadastrar: " . $conn->error;
@@ -32,11 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <h1>Cadastro</h1>
     <form method="POST" action="index.php">
         <input type="text" name="nome" placeholder="Nome" required>
-        <input type="text" name="ultimo_nome" placeholder="Último Nome">
+        <input type="text" name="ultimo_nome" placeholder="Último Nome" required>
         <input type="email" name="email" placeholder="E-mail" required>
-        <input type="text" name="telefone" placeholder="Telefone">
-        <input type="text" name="cpf" placeholder="CPF">
-        <input type="password" name="senha" placeholder="Senha">
+        <input type="text" name="telefone" placeholder="Telefone" required>
+        <input type="text" name="cpf" placeholder="CPF" required>
+        <input type="password" name="senha" placeholder="Senha" required>
         <button type="submit">Cadastrar</button>
     </form>
     <p>Já possui uma conta? <a href="./cliente/cliente.php"><button>Entre</button></a></p>
